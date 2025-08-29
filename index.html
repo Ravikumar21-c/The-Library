@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Library — Booking & Info</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">LB</div>
+        <div>
+          <h1>The Library</h1>
+          <p class="lead">Knowledge for everyone — reserve a seat, book study rooms, or contact the owner directly.</p>
+        </div>
+      </div>
+      <div class="muted">Open: Mon–Sun 09:00–20:00 </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Timings & Charges</h2>
+        <table>
+          <thead>
+            <tr><th>Service</th><th>Timing / Charge</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Early Morning</td><td>06:00–09:00 • Free</td></tr>
+            <tr><td>Morning (per month)</td><td>08:00–12:00 • ₹400 / month</td></tr>
+            <tr><td>After noon (per month)</td><td>12:00–16:00 • ₹400 / month</td></tr>
+            <tr><td>Evening (per month)</td><td>16:00–20:00 • ₹400 / month</td></tr>
+            <tr><td>Full day (per month)</td><td>08:00–20:00 • ₹1000 / month</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top:18px">Benefits</h3>
+        <div class="benefits">
+          <div class="benefit">Quiet study zones for deep work</div>
+          <div class="benefit">Free Wi‑Fi for members</div>
+          <div class="benefit">Friendly staff</div>
+        </div>
+
+        <h3 style="margin-top:18px">Rules / Notes</h3>
+        <p class="muted">Please maintain silence in the reading areas.</p>
+      </section>
+
+      <aside class="card panel">
+        <h3>Book a Seat</h3>
+        <div class="controls">
+          <label class="muted">Choose Timing</label>
+          <select id="service" class="select">
+            <option value="reading" data-price="0">Early Morning 06:00–09:00 • Free — Free</option>
+            <option value="study" data-price="400">Morning 08:00–12:00 • ₹400 /(per month)</option>
+            <option value="cabin" data-price="400">After noon 12:00–16:00 • ₹400 /(per month) </option>
+            <option value="cabin" data-price="400">Evening 16:00–20:00 • ₹400 /(per month)</option>
+          </select>
+
+          <div style="display:flex;gap:8px">
+            <div style="flex:1">
+              <label class="muted">Date</label>
+              <input id="date" type="date" />
+            </div>
+            <div style="width:120px">
+              <label class="muted">Time</label>
+              <input id="time" type="time" />
+            </div>
+          </div>
+
+          <label class="muted">Your name</label>
+          <input id="name" type="text" placeholder="Full name" />
+          <label class="muted">Phone</label>
+          <input id="phone" type="tel" placeholder="e.g. +919999999999" />
+
+          <label class="muted">Seats (click to select)</label>
+          <div class="seat-map" id="seatMap"></div>
+
+          <div class="legend">
+            <span><i class="dot free"></i> Free/Available</span>
+            <span><i class="dot selected"></i> Selected</span>
+            <span><i class="dot occ"></i> Occupied</span>
+          </div>
+
+          <div class="summary" id="summary">No seats selected • Total ₹0</div>
+
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap">
+            <button id="whatsappBtn" class="btn">Contact Owner on WhatsApp</button>
+            <button id="resetBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit">Reset</button>
+          </div>
+
+          <p class="muted" style="margin-top:10px">Tip: Edit the <code>ownerWhatsApp</code> variable in the code to set the library owner's WhatsApp number.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      &copy; Community Library • Designed with ❤️ • Contact owner: <a id="ownerLink" href="#" style="color:inherit;text-decoration:underline">WhatsApp</a>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+
+
+</body>
+</html>
