@@ -69,7 +69,7 @@ whatsappBtn.addEventListener('click', () => {
     const pricePer = Number(serviceSelect.selectedOptions[0].dataset.price || 0);
     const total = seats.length * pricePer;
 
-    let msg = `Hello! I would like to book from Community Library.%0A`;
+    let msg = `Hello! I would like to book from The Library.%0A`;
     msg += `Service: ${serviceText}%0A`;
     msg += `Date: ${date || 'Not specified'} Time: ${time || 'Not specified'}%0A`;
     msg += `Seats: ${seats.length ? seats.join(', ') : 'None selected'}%0A`;
